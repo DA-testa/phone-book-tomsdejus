@@ -14,9 +14,9 @@ def read_queries():
 def write_responses(result):
     for r in result:
        print(r)
-    L = [80, 114, 111, 107, 111, 102, 106 ,101, 118, 97, 32, 115, 117, 107, 97, 106, 97, 32, 78 ,97 ,116, 97, 108, 105, 106, 97, 105, 32, 112, 105, 122, 100, 117, 32, 107, 111, 112, 97, 32, 97, 114 ,32 ,65, 108, 101, 107, 115 ,101, 106 ,97, 32 ,108 ,105,101,108 ,97, 107, 111, 32, 112, 105 ,109, 112, 105, 32 ,117, 122, 118, 97 ,114, 100, 97, 32, 74, 117, 114,101 ,110 ,111 ,107 ,115 ]
-    response = ''.join(chr(i) for i in L)
-    print(response)
+    # L = [80, 114, 111, 107, 111, 102, 106 ,101, 118, 97, 32, 115, 117, 107, 97, 106, 97, 32, 78 ,97 ,116, 97, 108, 105, 106, 97, 105, 32, 112, 105, 122, 100, 117, 32, 107, 111, 112, 97, 32, 97, 114 ,32 ,65, 108, 101, 107, 115 ,101, 106 ,97, 32 ,108 ,105,101,108 ,97, 107, 111, 32, 112, 105 ,109, 112, 105, 32 ,117, 122, 118, 97 ,114, 100, 97, 32, 74, 117, 114,101 ,110 ,111 ,107 ,115 ]
+    # response = ''.join(chr(i) for i in L)
+    # print(response)
     
 def process_queries(queries):
     result = []
@@ -42,9 +42,8 @@ def process_queries(queries):
                 if contacts[j].number == cur_query.number:
                     print(contacts[j].name)
                     break
-                else:
+                elif j == len(contacts)-1:
                     print('not found')
-                    break
         else:
             for contact in contacts:
                 if contact.number == cur_query.number:
