@@ -9,7 +9,6 @@ class Query:
 
 def read_queries():
     n = int(input())
-    assert 1 <= n <= 10**5, "Too much queries"
     return [Query(input().split(' ', 2)) for i in range(n)]
 
 def write_responses(result):
@@ -28,7 +27,7 @@ def process_queries(queries):
             response = contacts.get(request.number, "not found")
             result.append(response)
         else:
-            response = "invalid input"
+            response = "not found"
             result.append(response)
     return result
 
